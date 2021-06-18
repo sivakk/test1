@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-xs-12">
+  
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ recipe.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Place Order <span ng-model="sum1" class="caret">{{sum1}}</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">Move Order List</a></li>
+        <li><a style="cursor: pointer;" (click)="onEditRecipe()">Edit Order</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteRecipe()">Delete Order</a></li>
+       <li><a style="cursor: pointer;" (click)="calculate()">calculate Order </a></li> 
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{ recipe.description }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }}  {{sum1}}
+      </li>
+    </ul>
+  </div>
+</div>
